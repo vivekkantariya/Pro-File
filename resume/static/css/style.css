@@ -37,6 +37,7 @@ body {
     display: flex;
     justify-content: center;
     margin: 0;
+    flex-wrap: wrap; /* Allow items to wrap on small screens */
 }
 
 .navbar ul li {
@@ -46,7 +47,7 @@ body {
 .navbar ul li a {
     color: #fff;
     text-decoration: none;
-    margin: 10px;
+    margin: 10px 15px;
     font-size: 1.2rem;
     padding: 10px 20px;
     transition: all 0.3s ease;
@@ -65,9 +66,10 @@ body {
     justify-content: center;
     align-items: center;
     min-height: calc(100vh - 120px);
-    padding: 40px;
+    padding: 60px 40px;
     position: relative;
     overflow: hidden;
+    margin: 0 auto;
 }
 
 .left-section {
@@ -76,18 +78,18 @@ body {
     justify-content: center;
     position: relative;
     text-align: center;
+    padding: 0 20px;
 }
 
 .profile-photo {
-    width: 250px;
-    max-width: 300px;
-    height: 280px;
+    width: 220px;
     border-radius: 50%;
+    height: 250px;
     border: 3px solid #292d3e;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
     position: relative;
-    top: -70px;
+    top: -50px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -98,11 +100,10 @@ body {
 
 .social-icons {
     position: absolute;
-    bottom: -50px;
-    left: 50%;
-    transform: translateX(-50%);
-    opacity: 1;
-    transition: opacity 0.3s ease;
+    bottom: 20px; /* Adjust the value as needed */
+    right: 20px; 
+    display: flex;
+    justify-content: flex-end;
 }
 
 .social-icons a {
@@ -127,7 +128,7 @@ body {
 }
 
 .right-section {
-    flex: 2;
+    flex: 1;
     color: #fff;
     position: relative;
     padding: 10px;
@@ -137,6 +138,7 @@ body {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
     overflow: hidden;
     backdrop-filter: blur(10px);
+    max-width: 70%;
 }
 
 .right-section::before,
@@ -163,17 +165,17 @@ body {
 
 .right-section h1 {
     font-size: 3.5rem;
-    margin-bottom: 10px;
     position: relative;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
 }
 
 .right-section h2.animated-text {
     font-size: 2.5rem;
     color: #ff7e5f;
-    margin-bottom: 20px;
     position: relative;
     animation: 3s infinite;
+    margin-bottom: 20px;
 }
 
 @keyframes slide-in {
@@ -214,11 +216,12 @@ body {
 }
 
 .right-section p {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
+    font-size: 1.3rem;
+    margin-bottom: 30px;
 }
 
-.btn, .download-btn {
+.btn,
+.download-btn {
     display: inline-block;
     padding: 12px 30px;
     text-decoration: none;
@@ -257,7 +260,7 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 20px 0;
+    padding: 10px 0;
     background: rgba(41, 45, 62, 0.8);
     color: #fff;
     font-size: 1.1rem;
@@ -269,6 +272,14 @@ body {
 
 .footer p {
     margin: 0;
+}
+
+.prof-image {
+    position: absolute;
+    z-index: 10000;
+    top: 15%;
+    left: 10%;
+    overflow: visible;
 }
 
 @keyframes gradient-bg {
@@ -287,37 +298,34 @@ body {
         padding: 20px;
     }
 
-    .left-section,
     .right-section {
-        flex: none;
-        width: 100%;
-        padding: 20px 0;
-    }
-
-    .profile-photo {
-        top: 0;
+        max-width: 100%;
+        margin-top: 40px;
     }
 
     .social-icons {
-        position: static;
-        transform: none;
+        justify-content: center;
         margin-top: 20px;
     }
 
-    .right-section {
-        padding: 20px;
+    .navbar ul li a {
+        font-size: 1rem;
+    }
+
+    .navbar {
+        padding: 1rem 0;
+    }
+
+    .profile-photo {
+        width: 180px;
+        height: 200px;
     }
 
     .right-section h1 {
         font-size: 2.5rem;
     }
 
-    .right-section p {
-        font-size: 1.2rem;
-    }
-
-    .btn, .download-btn {
-        font-size: 1rem;
-        padding: 10px 20px;
+    .right-section h2.animated-text {
+        font-size: 1.8rem;
     }
 }

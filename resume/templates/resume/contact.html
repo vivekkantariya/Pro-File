@@ -25,7 +25,7 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(75, 83, 119, 0.2);
+            background: rgba(75, 83, 119, 0.278);
             backdrop-filter: blur(10px);
             display: flex;
             justify-content: space-evenly;
@@ -33,6 +33,7 @@
             padding: 1rem 0;
             z-index: 3;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            transition: background 0.3s ease-in-out;
         }
 
         .navbar ul {
@@ -44,7 +45,7 @@
         }
 
         .navbar ul li {
-            margin-left: 20px;
+            margin-left: 40px;
         }
 
         .navbar ul li a {
@@ -55,9 +56,10 @@
         }
 
         .navbar ul li a:hover {
-            color: #4caf50;
+            color: #9aa4c2;
             transform: scale(1.1);
         }
+
 
         .particles {
             position: absolute;
