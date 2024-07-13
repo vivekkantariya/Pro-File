@@ -58,7 +58,7 @@
         }
 
         .contact-form button {
-            width: 100%;
+            width: auto;
             padding: 15px;
             border: none;
             border-radius: 5px;
@@ -70,7 +70,8 @@
         }
 
         .contact-form button:hover {
-            background: #45a049;
+            background: #587a98;
+            transform: translateY(-1px);
         }
 
         .particles {
@@ -104,6 +105,25 @@
             height: 8px;
             animation-duration: 8s;
         }
+
+        .create-yours-link {
+            display: inline-block;
+            color: white;
+            padding: 10px 2px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 12px;
+            transition: background-color 0.3s ease;
+        }
+
+        .create-yours-link:hover {
+            transform: translateY(-1px);
+        }
+
+
 
         @keyframes moveParticle {
             0% {
@@ -139,8 +159,13 @@
                 <input type="email" name="email" placeholder="Your Email" required>
                 <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
                 <button type="submit">Send Message</button>
-            </form>
+                <p>
+
+                </p>
+                    <a href="{% url 'createyours' %}" class="create-yours-link">Want to create your own professional CV?</a>
         </div>
+        </form>
+    </div>
     </div>
     <script>
         function createParticle() {
