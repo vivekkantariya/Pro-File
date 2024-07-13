@@ -1,13 +1,10 @@
 from django import forms
+from .models import CVRequest
 
-class CreateYoursForm(forms.Form):
-    photo = forms.ImageField()
-    description = forms.CharField(widget=forms.Textarea)
-    role = forms.CharField(max_length=100)
-    linkedin = forms.URLField(required=False)
-    instagram = forms.URLField(required=False)
-    github = forms.URLField(required=False)
-    project1 = forms.CharField(max_length=200)
-    project2 = forms.CharField(max_length=200)
-    project3 = forms.CharField(max_length=200)
-    experience = forms.CharField(widget=forms.Textarea)
+class CreateYoursForm(forms.ModelForm):
+    class Meta:
+        model = CVRequest
+        fields = ['photo', 'description', 'role', 'linkedin', 'github', 'instagram', 
+                  'project_title_1', 'project_description_1', 'project_title_2', 
+                  'project_description_2', 'project_title_3', 'project_description_3', 
+                  'experience']
