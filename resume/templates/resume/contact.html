@@ -60,7 +60,6 @@
             transform: scale(1.1);
         }
 
-
         .particles {
             position: absolute;
             width: 100%;
@@ -105,12 +104,9 @@
 
         .greeting {
             flex: 1;
-            padding-top: 20px;
             display: flex;
             align-items: center;
-            justify-content: left;
-            text-align: center;
-            overflow: hidden;
+            justify-content: flex-start;
         }
 
         .greeting h2 {
@@ -118,6 +114,19 @@
             color: #fff;
             margin: 0;
             white-space: nowrap;
+            overflow: hidden;
+            border-right: 0.15em solid #fff;
+            animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+        }
+
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #fff; }
         }
 
         .contact-container {
@@ -257,19 +266,27 @@
     <script>
         const greetingText = "Feel free to contact me!";
         const typingSpeed = 100;
+        const delayBetweenRepeats = 2000;
 
-        let index = 0;
-        function type() {
-            if (index < greetingText.length) {
-                document.getElementById('typing-text').textContent += greetingText.charAt(index);
-                index++;
-                setTimeout(type, typingSpeed);
+        function typeGreeting() {
+            let index = 0;
+            function type() {
+                if (index < greetingText.length) {
+                    document.getElementById('typing-text').textContent += greetingText.charAt(index);
+                    index++;
+                    setTimeout(type, typingSpeed);
+                } else {
+                    setTimeout(() => {
+                        document.getElementById('typing-text').textContent = "";
+                        index = 0;
+                        type();
+                    }, delayBetweenRepeats);
+                }
             }
+            type();
         }
 
-        type();
-
-        document.querySelector('.contact-form').addEventListener('submit', function (event) {
+        document.querySelector('.contact-form').addEventListener('submit', function(event) {
             event.preventDefault();
             alert('Form submitted!');
         });
@@ -279,6 +296,9 @@
             particle.classList.add('particle');
             particle.style.top = Math.random() * 100 + 'vh';
             particle.style.left = Math.random() * 100 + 'vw';
+            particle.style.width = Math.random() * 8 + 4 + 'px';
+            particle.style.height = Math.random() * 8 + 4 + 'px';
+            particle.style.opacity = Math.random();
             document.querySelector('.particles').appendChild(particle);
 
             setTimeout(() => {
@@ -287,6 +307,8 @@
         }
 
         setInterval(createParticle, 200);
+
+        typeGreeting();
     </script>
 </body>
 

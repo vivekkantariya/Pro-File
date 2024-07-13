@@ -1,3 +1,7 @@
+{% extends 'resume/base.html' %}
+{% load static %}
+
+{% block content %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,56 +10,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Experience</title>
     <style>
-        body,
-        html {
-            margin: 0;
-            padding: 0;
-            overflow-x: hidden;
-            font-family: 'Roboto', sans-serif;
-            background: #0e0b16;
-            color: #ffffff;
-            position: relative;
-            z-index: 0;
-        }
-
-
-        /* Navbar */
-        .navbar {
-            background: rgba(41, 45, 62, 0.8);
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: background 0.3s ease;
-        }
-
-        .navbar ul {
-            list-style: none;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            margin: 0;
-        }
-
-        .navbar ul li {
-            display: inline-block;
-        }
-
-        .navbar ul li a {
-            color: #fff;
-            text-decoration: none;
-            margin: 10px;
-            font-size: 1.2rem;
-            padding: 10px 20px;
-            transition: all 0.3s ease;
-        }
-
-        .navbar ul li a:hover {
-            background-color: #4a5062;
-            border-radius: 5px;
-            border: 1px solid transparent;
-            transition: all 0.3s ease;
+        body {
+            background-color: #111;
+            color: #eee;
+            font-family: Arial, sans-serif;
         }
 
         .container {
@@ -71,7 +29,8 @@
             text-align: center;
             font-size: 3em;
             margin-bottom: 20px;
-            color: #1a1a2e;
+            color: #333333;
+            text-shadow: 0 0 10px rgba(26, 188, 156, 0.8);
         }
 
         .timeline {
@@ -88,7 +47,7 @@
             left: 50%;
             margin-left: -1px;
             width: 2px;
-            background: #934f80;
+            background: rgba(0, 31, 67, 0.707);
         }
 
         .timeline-item {
@@ -114,7 +73,7 @@
 
         .timeline-item-content {
             padding: 20px;
-            background: rgba(43, 33, 58, 0.8);
+            background: rgba(28, 31, 46, 0.8);
             position: relative;
             border-radius: 6px;
             box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
@@ -132,7 +91,7 @@
             right: -7px;
             border-width: 7px;
             border-style: solid;
-            border-color: transparent transparent transparent #ff4ecd;
+            border-color: transparent transparent transparent rgba(255, 255, 255, 0.826);
         }
 
         .timeline-item:nth-child(even) .timeline-item-content::before {
@@ -142,23 +101,26 @@
             left: -7px;
             border-width: 7px;
             border-style: solid;
-            border-color: transparent #ff4ecd transparent transparent;
+            border-color: transparent rgba(255, 255, 255, 0.826) transparent transparent;
         }
 
         .date {
             font-size: 1em;
-            color: #ff4ecd;
+            color: #ccc;
+            /* Light Gray */
         }
 
         .title {
             margin: 0;
             font-size: 1.5em;
             font-weight: bold;
+            color: #ffffff;
         }
 
         .desc {
             font-size: 1em;
             margin-top: 10px;
+            color: #c0c0c0;
         }
 
         @media (max-width: 768px) {
@@ -181,14 +143,23 @@
             .timeline-item-content::before {
                 left: 60px;
                 right: auto;
-                border-color: transparent #4eeaff transparent transparent;
+                border-color: transparent rgba(26, 188, 156, 0.4) transparent transparent;
+                /* Light Turquoise */
             }
         }
 
         /* Add more futuristic elements */
         .glow {
-            text-shadow: 0 0 10px #495f62, 0 0 20px #ff4ecd, 0 0 30px #ff4ecd, 0 0 40px #ff4ecd, 0 0 50px #ff4ecd, 0 0 60px #ff4ecd, 0 0 70px #ff4ecd;
+            text-shadow:
+                0 0 10px rgba(255, 255, 255, 0.6),
+                0 0 20px rgba(255, 255, 255, 0.6),
+                0 0 30px rgba(255, 255, 255, 0.6),
+                0 0 40px rgba(255, 255, 255, 0.6),
+                0 0 50px rgba(255, 255, 255, 0.6),
+                0 0 60px rgba(255, 255, 255, 0.6),
+                0 0 70px rgba(255, 255, 255, 0.6);
         }
+
 
         /* Static Background Designs */
         .background-design {
@@ -203,8 +174,8 @@
 
         .shape {
             position: absolute;
-            background: rgba(45, 70, 88, 0.715);
-            border: 2px solid rgba(0, 0, 0, 0.4);
+            background: rgba(167, 174, 207, 0.581);
+            border: 2px solid rgba(255, 255, 255, 0.879);
             border-radius: 50%;
         }
 
@@ -218,50 +189,24 @@
         .shape-2 {
             width: 200px;
             height: 200px;
-            top: 50%;
-            left: 70%;
+            top: 35%;
+            left: 80%;
         }
 
         .shape-3 {
             width: 100px;
             height: 100px;
             top: 80%;
-            left: 30%;
-        }
-
-        .shape-4 {
-            width: 300px;
-            height: 300px;
-            top: 10%;
-            left: 80%;
-        }
-
-        .shape-5 {
-            width: 120px;
-            height: 120px;
-            top: 60%;
-            left: 20%;
+            left: 40%;
         }
     </style>
 </head>
 
 <body>
-
-    <nav class="navbar">
-        <ul>
-            <li><a href="{% url 'home' %}">Home</a></li>
-            <li><a href="{% url 'projects' %}">Projects</a></li>
-            <li><a href="{% url 'experience' %}">Experience</a></li>
-            <li><a href="{% url 'contact' %}">Contact</a></li>
-        </ul>
-    </nav>
-    
     <div class="background-design">
         <div class="shape shape-1"></div>
         <div class="shape shape-2"></div>
         <div class="shape shape-3"></div>
-        <div class="shape shape-4"></div>
-        <div class="shape shape-5"></div>
     </div>
 
     <div class="container">
@@ -294,3 +239,4 @@
 </body>
 
 </html>
+{% endblock %}
