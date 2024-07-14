@@ -37,7 +37,8 @@ body {
     display: flex;
     justify-content: center;
     margin: 0;
-    flex-wrap: wrap; /* Allow items to wrap on small screens */
+    flex-wrap: wrap;
+    /* Allow items to wrap on small screens */
 }
 
 .navbar ul li {
@@ -63,6 +64,8 @@ body {
 /* Main content */
 .main-content {
     display: flex;
+    flex-direction: row;
+    /* Default: Side-by-side layout */
     justify-content: center;
     align-items: center;
     min-height: calc(100vh - 120px);
@@ -100,8 +103,9 @@ body {
 
 .social-icons {
     position: absolute;
-    bottom: 20px; /* Adjust the value as needed */
-    right: 20px; 
+    bottom: 20px;
+    /* Adjust the value as needed */
+    right: 20px;
     display: flex;
     justify-content: flex-end;
 }
@@ -128,10 +132,10 @@ body {
 }
 
 .right-section {
-    flex: 1;
+    flex: 2;
     color: #fff;
     position: relative;
-    padding: 10px;
+    padding: 20px;
     text-align: center;
     background: rgba(0, 16, 39, 0.397);
     border-radius: 20px;
@@ -164,6 +168,7 @@ body {
 }
 
 .right-section h1 {
+    margin-top: 50px;
     font-size: 3.5rem;
     position: relative;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
@@ -183,10 +188,12 @@ body {
         transform: translateX(-100%);
         opacity: 0;
     }
+
     50% {
         transform: translateX(0);
         opacity: 1;
     }
+
     100% {
         transform: translateX(100%);
         opacity: 0;
@@ -207,9 +214,12 @@ body {
 }
 
 @keyframes bounce {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: translateY(0) scale(1);
     }
+
     50% {
         transform: translateY(-15px) scale(1.2);
     }
@@ -286,34 +296,17 @@ body {
     0% {
         background: linear-gradient(135deg, #1c1f2e, #a3b1c6);
     }
+
     100% {
         background: linear-gradient(135deg, #a3b1c6, #1c1f2e);
     }
 }
 
 /* Media Queries */
-@media (max-width: 768px) {
-    .main-content {
-        flex-direction: column;
-        padding: 20px;
-    }
-
-    .right-section {
-        max-width: 100%;
-        margin-top: 40px;
-    }
-
-    .social-icons {
-        justify-content: center;
-        margin-top: 20px;
-    }
-
+@media (max-width: 1024px) {
     .navbar ul li a {
         font-size: 1rem;
-    }
-
-    .navbar {
-        padding: 1rem 0;
+        padding: 8px 16px;
     }
 
     .profile-photo {
@@ -326,6 +319,130 @@ body {
     }
 
     .right-section h2.animated-text {
+        font-size: 2rem;
+    }
+
+    .btn,
+    .download-btn {
+        padding: 10px 25px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 0.5px 0;
+        align-items:center;
+    }
+
+    .navbar ul {
+        flex-direction: row;
+        align-items:center;
+    }
+    .navbar ul li {
+        margin-left: -40px;
+        align-items:center;
+    }
+
+    .navbar ul li a {
+        font-size: 0.9rem;
+        padding: 10px 15px;
+    }
+
+    .main-content {
+        flex-direction: column;
+        padding: 40px 20px;
+    }
+
+    .left-section {
+        order: 2;
+        text-align: center;
+    }
+
+    .right-section {
+        order: 1;
+        margin-top: 150px;
+        margin-bottom: 30px;
+        width: 100%;
+        max-width: 100%;
+        text-align: center;
+        padding: 10px;
+    }
+
+    .profile-photo {
+        width: 160px;
+        height: 180px;
+        margin-left: 80px;
+        margin-bottom: 0px;
+    }
+
+    .right-section h1 {
+        font-size: 2rem;
+    }
+
+    .right-section h2.animated-text {
+        font-size: 1.5rem;
+    }
+
+    .btn,
+    .download-btn {
+        padding: 8px 20px;
+        font-size: 0.9rem;
+    }   
+
+    .social-icons {
+        bottom: 20px;
+        left: 20px; /* Adjusted to left for smaller screens */
+        justify-content: center; /* Align icons from left to right */
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar ul li a {
+        font-size: 0.9rem;
+    }
+
+    .profile-photo {
+        width: 140px;
+        height: 160px;
+    }
+
+    .right-section h1 {
         font-size: 1.8rem;
+    }
+
+    .right-section h2.animated-text {
+        font-size: 1.2rem;
+    }
+
+    .btn,
+    .download-btn {
+        padding: 8px 20px;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 320px) {
+    .navbar ul li a {
+        font-size: 0.8rem;
+    }
+
+    .profile-photo {
+        width: 120px;
+        height: 140px;
+    }
+
+    .right-section h1 {
+        font-size: 1.5rem;
+    }
+
+    .right-section h2.animated-text {
+        font-size: 1rem;
+    }
+
+    .btn,
+    .download-btn {
+        padding: 6px 18px;
+        font-size: 0.7rem;
     }
 }
