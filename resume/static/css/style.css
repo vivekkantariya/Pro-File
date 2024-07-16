@@ -65,11 +65,10 @@ body {
 .main-content {
     display: flex;
     flex-direction: row;
-    /* Default: Side-by-side layout */
     justify-content: center;
     align-items: center;
     min-height: calc(100vh - 120px);
-    padding: 60px 40px;
+    padding: 30px 5px;
     position: relative;
     overflow: hidden;
     margin: 0 auto;
@@ -93,7 +92,7 @@ body {
     margin-bottom: 20px;
     position: relative;
     top: -50px;
-    left: -25px;
+    left: -35px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -105,7 +104,6 @@ body {
 .social-icons {
     position: absolute;
     bottom: 20px;
-    /* Adjust the value as needed */
     right: 20px;
     display: flex;
     justify-content: flex-end;
@@ -134,9 +132,10 @@ body {
 
 .right-section {
     flex: 2;
+    margin-top: 60px;
     color: #fff;
     position: relative;
-    padding: 20px;
+    padding: 30px;
     text-align: center;
     background: rgba(0, 16, 39, 0.397);
     border-radius: 20px;
@@ -228,7 +227,6 @@ body {
 
 .right-section p {
     font-size: 1.3rem;
-    margin-bottom: 15px;
 }
 
 .btn,
@@ -244,7 +242,7 @@ body {
 .btn {
     background: linear-gradient(to right, #909091, #3b4152);
     color: #fff;
-    margin: 50px;
+    /* margin: 50px; */
 }
 
 .btn:hover {
@@ -303,34 +301,98 @@ body {
     }
 }
 
-/* Media Queries */
+@media (max-width: 1440px) {
+
+    .profile-photo {
+        margin-top: 0px;
+
+    }
+}
+
 @media (max-width: 1024px) {
+
     .navbar ul li a {
         font-size: 1rem;
-        padding: 8px 16px;
+        padding: 10px 15px;
+    }
+
+    .main-content {
+        flex-direction: column;
+        padding: 40px 100px;
+        align-items: center;
+    }
+
+    .left-section {
+        order: 2;
+        text-align: center;
+        padding: 20px 0;
+    }
+
+    .right-section {
+        order: 1;
+        margin-top: 30px;
+        width: 90%;
+        padding: 30px;
+        max-width: 90%;
+        text-align: center;
     }
 
     .profile-photo {
         width: 180px;
         height: 200px;
-        top: -80px;
+        margin-top: 0px;
+        left: -60px;
     }
 
     .right-section h1::before {
-        font-size: 2.5rem;
-        left: 85px;
+        font-size: 3rem;
+        left: 120px;
+        margin-bottom: 20px;
     }
 
     .right-section h2.animated-text {
         font-size: 2rem;
+        margin-bottom: 20px;
+    }
+
+    .right-section p {
+        font-size: 1.1rem;
     }
 
     .btn,
     .download-btn {
         padding: 10px 25px;
         font-size: 1rem;
+        margin: 20px;
+    }
+
+    .social-icons {
+        bottom: 20px;
+        justify-content: center;
+    }
+
+    .social-icons a {
+        margin: 0 8px;
+    }
+
+    .right-section::before,
+    .right-section::after {
+        width: 100px;
+        height: 100px;
+    }
+
+    .right-section::before {
+        top: -10px;
+        right: -10px;
+    }
+
+    .right-section::after {
+        bottom: -10px;
+        left: -10px;
     }
 }
+
+
 
 @media (max-width: 768px) {
     .navbar {
@@ -353,7 +415,7 @@ body {
 
     .main-content {
         flex-direction: column;
-        padding: 10px 30px;
+        padding: 30px 30px;
     }
 
     .left-section {
@@ -363,7 +425,7 @@ body {
 
     .right-section {
         order: 1;
-        margin-top: 150px;
+        margin-top: 100px;
         margin-bottom: 10px;
         width: 100%;
         max-width: 150%;
@@ -374,15 +436,19 @@ body {
     .profile-photo {
         width: 130px;
         height: 140px;
-        margin-left: 250px;
-        margin-top: 70px;
+        margin-left: 300px;
+        margin-top: 20px;
     }
 
 
     .right-section h1::before {
-        font-size: 2rem;
+        font-size:1.8rem;
         left: 100px;
         bottom: 20px;
+    }
+    .right-section h1 {
+        font-size:2rem;
+        bottom: -20px;
     }
 
     .right-section h2.animated-text {
@@ -393,65 +459,96 @@ body {
     .download-btn {
         padding: 8px 20px;
         font-size: 0.9rem;
-        margin-top: -20px;
-        /* Added this line */
+        margin-bottom: 50px;
     }
 
     .social-icons {
-        bottom: 10px;
+        bottom: 5px;
         left: 30px;
         justify-content: center;
     }
 
 }
 
-@media (max-width: 480px) {
-    .navbar ul li a {
-        font-size: 0.9rem;
+@media (max-width: 425px) {
+
+    .main-content {
+        padding: 20px 15px;
     }
 
     .profile-photo {
-        width: 140px;
-        height: 160px;
+        width: 120px;
+        height: 135px;
+        left: -220px;
+        top: -60px;
+    }
+
+    .right-section {
+        margin-top: 80px;
     }
 
     .right-section h1 {
-        font-size: 1.8rem;
+        font-size: 1.2rem;
+    }
+    .right-section h1::before {
+        font-size: 1.2rem;
+        left: 50px;
     }
 
     .right-section h2.animated-text {
         font-size: 1.2rem;
     }
 
-    .btn,
-    .download-btn {
-        padding: 8px 20px;
+    .right-section p {
         font-size: 0.8rem;
-        margin-top: 10px;
+    }
+
+    .btn, .download-btn {
+        font-size: 0.8rem;
+        padding: 10px 20px;
     }
 }
+
 
 @media (max-width: 320px) {
     .navbar ul li a {
         font-size: 0.8rem;
+        padding: 5px 8px;
+    }
+
+    .main-content {
+        padding: 0px 20px;
     }
 
     .profile-photo {
-        width: 120px;
-        height: 140px;
+        width: 110px;
+        height: 125px;
+        left: -235px;
+        top: -70px;
     }
 
+    .right-section h1::before {
+        font-size: 0.8rem;
+        left: 10px;
+        bottom: -20px;
+    }
     .right-section h1 {
         font-size: 1.5rem;
+        left: 0px;
+        bottom: -20px;
     }
 
     .right-section h2.animated-text {
         font-size: 1rem;
     }
 
-    .btn,
-    .download-btn {
-        padding: 6px 18px;
-        font-size: 0.7rem;
+    .right-section p {
+        font-size: 0.8rem;
+    }
+
+    .btn, .download-btn {
+        font-size: 0.8rem;
+        padding: 5px 10px;
+        margin-bottom: -80px;
     }
 }
