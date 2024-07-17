@@ -27,7 +27,7 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            padding: 0px;
+            padding: 20px;
         }
 
         .contact-form {
@@ -37,6 +37,7 @@
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
             width: 100%;
             max-width: 500px;
+            box-sizing: border-box;
         }
 
         .contact-form h1 {
@@ -123,8 +124,6 @@
             transform: translateY(-1px);
         }
 
-
-
         @keyframes moveParticle {
             0% {
                 transform: translate(-50%, -50%) translateY(0) translateX(0);
@@ -146,6 +145,175 @@
                 background: linear-gradient(135deg, #a3b1c6, #1c1f2e);
             }
         }
+
+        /* Media Queries */
+        @media (max-width: 1024px) {
+            .contact-form {
+                margin-bottom: 80px;
+            }
+        }
+
+        @media (max-width: 1500px) {
+            .contact-form input,
+            .contact-form textarea {
+                font-size: 15px;
+                width: 95%;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            .contact-form {
+                padding: 30px;
+            }
+
+            .contact-form h1 {
+                font-size: 22px;
+            }
+
+            .contact-form input,
+            .contact-form textarea {
+                font-size: 15px;
+                width: 95%;
+            }
+
+            .contact-form button {
+                font-size: 16px;
+            }
+
+            .create-yours-link {
+                font-size: 15px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .contact-form {
+                padding: 25px;
+            }
+
+            .contact-form h1 {
+                font-size: 20px;
+            }
+
+            .contact-form input,
+            .contact-form textarea {
+                font-size: 14px;
+            }
+
+            .contact-form button {
+                font-size: 15px;
+            }
+
+            .create-yours-link {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .contact-form {
+                padding: 20px;
+            }
+
+            .contact-form h1 {
+                font-size: 18px;
+            }
+
+            .contact-form input,
+            .contact-form textarea {
+                font-size: 13px;
+                width: 95%;
+
+            }
+
+            .contact-form button {
+                font-size: 14px;
+            }
+
+            .create-yours-link {
+                font-size: 13px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .contact-form {
+                padding: 15px;
+            }
+
+            .contact-form h1 {
+                font-size: 16px;
+            }
+
+            .contact-form input,
+            .contact-form textarea {
+                font-size: 12px;
+                width: 95%;
+
+            }
+
+            .contact-form button {
+                font-size: 13px;
+                padding: 12px;
+            }
+
+            .create-yours-link {
+                font-size: 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .contact-form {
+                padding: 10px;
+                width: 90%;
+            }
+
+            .contact-form h1 {
+                font-size: 14px;
+            }
+
+            .contact-form input,
+            .contact-form textarea {
+                font-size: 11px;
+                padding: 8px;
+                width: 95%;
+
+            }
+
+            .contact-form button {
+                font-size: 12px;
+                padding: 10px;
+            }
+
+            .create-yours-link {
+                font-size: 11px;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .contact-form {
+                padding: 5px;
+                width: 85%;
+                margin-top: -40px;
+            }
+
+            .contact-form h1 {
+                font-size: 12px;
+            }
+
+            .contact-form input,
+            .contact-form textarea {
+                font-size: 10px;
+                padding: 6px;
+                width: 95%;
+            }
+
+            .contact-form button {
+                font-size: 11px;
+                padding: 8px;
+            }
+
+            .create-yours-link {
+                font-size: 10px;
+            }
+        }
     </style>
 </head>
 
@@ -159,13 +327,10 @@
                 <input type="email" name="email" placeholder="Your Email" required>
                 <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
                 <button type="submit">Send Message</button>
-                <p>
-
-                </p>
-                    <a href="{% url 'createyours' %}" class="create-yours-link">Want to create your own professional CV?</a>
+                <p></p>
+                <a href="{% url 'createyours' %}" class="create-yours-link">Want to create your own professional CV?</a>
+            </form>
         </div>
-        </form>
-    </div>
     </div>
     <script>
         function createParticle() {

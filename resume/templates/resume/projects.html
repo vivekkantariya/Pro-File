@@ -144,7 +144,50 @@
 
         @media (max-width: 768px) {
             .project-grid {
-                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+
+            .container {
+                padding: 10px 15px;
+            }
+
+            .project-card {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 2.5em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .project-grid {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                gap: 10px;
+            }
+
+            .container {
+                padding: 5px 10px;
+            }
+
+            .project-card {
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            .project-title {
+                font-size: 1.2em;
+            }
+
+            .project-description {
+                font-size: 0.9em;
+            }
+
+            .project-tech {
+                font-size: 0.8em;
             }
         }
     </style>
@@ -204,7 +247,7 @@
                 <div class="project-description">Description of Project 2</div>
                 <div class="project-tech">Technologies: Python, Django</div>
                 <div class="project-links">
-                    <a href="#"><i class="fas fa-external-link-alt"></i> Demo</a>
+                    <a hre  f="#"><i class="fas fa-external-link-alt"></i> Demo</a>
                     <a href="#"><i class="fab fa-github"></i> GitHub</a>
                 </div>
             </div>
