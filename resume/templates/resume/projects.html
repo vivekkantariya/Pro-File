@@ -24,9 +24,10 @@
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 100%;
             margin: 0 auto;
             padding: 15px 17px;
+            box-sizing: border-box;
         }
 
         h1 {
@@ -109,6 +110,8 @@
             height: 100%;
             z-index: -1;
             pointer-events: none;
+            overflow: hidden;
+            box-sizing: border-box;
         }
 
         .shape {
@@ -247,7 +250,7 @@
                 <div class="project-description">Description of Project 2</div>
                 <div class="project-tech">Technologies: Python, Django</div>
                 <div class="project-links">
-                    <a hre  f="#"><i class="fas fa-external-link-alt"></i> Demo</a>
+                    <a hre f="#"><i class="fas fa-external-link-alt"></i> Demo</a>
                     <a href="#"><i class="fab fa-github"></i> GitHub</a>
                 </div>
             </div>

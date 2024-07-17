@@ -10,10 +10,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Experience</title>
     <style>
+        html{
+            overflow-x: hidden; 
+        }
         body {
-            background-color: #111;
-            color: #eee;
-            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            background: #0e0b16;
+            color: #ffffff;
+            overflow-x: hidden; 
+            box-sizing: border-box;
         }
 
         .container {
@@ -37,6 +44,7 @@
             position: relative;
             padding: 20px 0;
             list-style: none;
+            overflow: hidden; /* Prevent timeline overflow */
         }
 
         .timeline::before {
@@ -122,35 +130,8 @@
             color: #c0c0c0;
         }
 
-        @media (max-width: 768px) {
-            .timeline::before {
-                left: 20px;
-            }
-
-            .timeline-item {
-                width: 100%;
-                padding-left: 70px;
-                padding-right: 20px;
-                padding-bottom: 20px;
-            }
-
-            .timeline-item:nth-child(odd),
-            .timeline-item:nth-child(even) {
-                left: 0;
-            }
-
-            .timeline-item-content::before {
-                left: 60px;
-                right: auto;
-                border-color: transparent rgba(26, 188, 156, 0.4) transparent transparent;
-                /* Light Turquoise */
-            }
-        }
-
-        /* Add more futuristic elements */
         .glow {
-            text-shadow:
-                0 0 10px rgba(192, 192, 192, 0.6),
+            text-shadow: 0 0 10px rgba(192, 192, 192, 0.6),
                 0 0 20px rgba(192, 192, 192, 0.6),
                 0 0 30px rgba(192, 192, 192, 0.6),
                 0 0 40px rgba(192, 192, 192, 0.6),
@@ -158,7 +139,6 @@
                 0 0 60px rgba(192, 192, 192, 0.6),
                 0 0 70px rgba(192, 192, 192, 0.6);
         }
-
 
         /* Static Background Designs */
         .background-design {
@@ -169,6 +149,7 @@
             height: 100%;
             z-index: -1;
             pointer-events: none;
+            box-sizing: border-box;
         }
 
         .shape {
@@ -200,6 +181,117 @@
             height: 100px;
             top: 80%;
             left: 40%;
+        }
+
+        @media (max-width: 1200px) {
+            .container {
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 2.5em;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .container {
+                padding: 10px;
+            }
+
+            h1 {
+                font-size: 2.2em;
+            }
+
+            .timeline-item {
+                padding: 15px 30px;
+            }
+
+            .timeline-item-content {
+                padding: 15px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .timeline::before {
+                left: 10%;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding: 15px 10%;
+                margin-bottom: 20px;
+            }
+
+            .timeline-item-content {
+                padding: 10px;
+                margin-left: 20px;
+            }
+
+            .timeline-item:nth-child(odd),
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+
+            .timeline-item-content::before {
+                left: auto;
+                right: -7px;
+                border-color: transparent rgba(255, 255, 255, 0.826) transparent transparent;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .container {
+                width: 100%;
+                padding: 5px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            .timeline-item {
+                padding: 10px 5%;
+            }
+
+            .timeline-item-content {
+                padding: 10px;
+            }
+
+            .timeline-item-content::before {
+                top: 10px;
+                right: -5px;
+                border-width: 5px;
+            }
+
+            .timeline-item:nth-child(odd),
+            .timeline-item:nth-child(even) {
+                padding-left: 80px;
+                left: 0;
+            }
+        }
+
+        @media (max-width: 400px) {
+            h1 {
+                font-size: 1.8em;
+            }
+
+            .date {
+                font-size: 0.9em;
+            }
+
+            .title {
+                font-size: 1.2em;
+            }
+
+            .desc {
+                font-size: 0.9em;
+            }
+
+            .timeline-item:nth-child(odd),
+            .timeline-item:nth-child(even) {
+                padding-left: 60px;
+                left: 0;
+            }
         }
     </style>
 </head>
