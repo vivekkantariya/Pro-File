@@ -9,6 +9,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Me</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
             margin: 0;
@@ -37,12 +38,14 @@
             background: rgba(0, 0, 0, 0.7);
             padding: 40px;
             border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 1);
             width: 100%;
             max-width: 500px;
             box-sizing: border-box;
             margin-top: 80px;
             margin-right: 80px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+
         }
 
         .left-sec {
@@ -51,7 +54,7 @@
             top: 50%;
             transform: translateY(-50%);
             text-align: center;
-            z-index: 1;
+            z-index: 2;
         }
 
         .typing-text {
@@ -59,9 +62,10 @@
             font-size: 24px;
             white-space: nowrap;
             overflow: hidden;
-            margin-top: -150px;
+            margin-top: -50px;
             border-right: 3px solid #ffffff;
             animation: typing 4s steps(40, end), blink 0.75s step-end infinite;
+            box-sizing: border-box;
         }
 
         @keyframes typing {
@@ -75,6 +79,7 @@
         }
 
         @keyframes blink {
+
             from,
             to {
                 border-color: transparent;
@@ -84,6 +89,61 @@
                 border-color: #ffffff;
             }
         }
+
+        .social-icons {
+            position: absolute;
+            right: 140px;
+            display: flex;
+            justify-content: flex-end;
+            z-index: 3;
+        }
+
+        .social-icons a {
+            display: inline-block;
+            margin: 0 10px;
+            transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+            z-index: 100;
+
+        }
+
+        .social-icons a i {
+            font-size: 30px;
+            color: #ffffff;
+            transition: transform 0.3s ease;
+            z-index: 100;
+        }
+
+        .social-icons a:hover i {
+            transform: scale(1.2);
+            color: #ff7e5f;
+            z-index: 100;
+        }
+
+        .contact-info {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 20px;
+            margin-top: 50px;
+            text-align: center;
+            color: #ffffff;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            padding-bottom: 70px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(5px);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-sizing: border-box;
+        }
+
+        .contact-info p {
+            margin: 10px 10px;
+        }
+
+        .contact-info:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+        }
+
 
         .contact-form h1 {
             margin-bottom: 20px;
@@ -130,6 +190,11 @@
             transform: translateY(-1px);
         }
 
+        .contact-form:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+        }
+
         .particles {
             position: absolute;
             width: 100%;
@@ -163,7 +228,7 @@
         }
 
         .create-yours-link {
-            display: inline-block;
+            display: flex;
             color: white;
             padding: 10px 2px;
             text-align: center;
@@ -204,7 +269,22 @@
         /* Media Queries */
         @media (max-width: 1024px) {
             .contact-form {
-                margin-bottom: 80px;
+                margin-top: 100px;
+                margin-right: -60px;
+                max-width: 400px;
+            }
+
+            .left-sec{
+                left: 40px;
+            }
+            .contact-info {
+                margin-top: 80px;
+                right: -100px;
+                font-size:large;
+            }
+
+            .typing-text{
+                font-size: 19px;
             }
         }
 
@@ -266,8 +346,37 @@
 
         @media (max-width: 768px) {
             .contact-form {
-                padding: 20px;
+                margin: 20px 50px;
+                padding-top: 0px;
+                padding-bottom: 10px;
+                margin-top: 330px;
+                margin-right: 10px;
+                max-width: 550px;
+                max-height: 380px;
+                border-radius: 10px;
             }
+
+            .left-sec{
+                left: 210px;
+                top: 260px;
+                max-width: 400px;
+                max-height: 200px;
+            }
+
+            .social-icons{
+                margin-right: -55px;
+                margin-bottom: 0px;
+            }
+            
+            .contact-info {
+                margin-top: 30px;
+                right: -80px;
+                font-size:medium;
+            }
+
+            .typing-text{
+                font-size: 20px;
+            }   
 
             .contact-form h1 {
                 font-size: 18px;
@@ -285,7 +394,9 @@
             }
 
             .create-yours-link {
-                font-size: 13px;
+                font-size: 15px;
+                margin-left: 200px;
+                margin-top: -60px;
             }
         }
 
@@ -350,6 +461,12 @@
                 margin-top: -40px;
             }
 
+            .contact-info {
+                padding: 5px;
+                width: 65%;
+                margin-top: 0px;
+            }
+
             .contact-form h1 {
                 font-size: 12px;
             }
@@ -380,6 +497,19 @@
             <div>
                 <span>Welcome! Let's get in touch...</span>
             </div>
+        </div>
+        <div class="contact-info">
+            <p>Feel free to reach out to me...</p>
+            <p><i class="fas fa-envelope"></i> vivek.kantariya@example.com</p>
+            <p><i class="fas fa-phone"></i> +123 456 7890</p>
+        </div>
+        <div class="social-icons">
+            <a href="https://www.linkedin.com/in/your-linkedin-profile" target="_blank"><i
+                    class="fab fa-linkedin"></i></a>
+            <a href="https://www.instagram.com/your-instagram-profile" target="_blank"><i
+                    class="fab fa-instagram"></i></a>
+            <a href="https://www.github.com/vivekkantariya" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="path/to/your/CV.pdf" target="_blank" download><i class="fas fa-file-download"></i></a>
         </div>
     </div>
     <div class="container">
