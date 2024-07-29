@@ -2,18 +2,110 @@
 {% load static %}
 
 {% block content %}
+
+<style>
+    .skills-section {
+        margin-top: 10px;
+        margin-bottom: 5px;
+        padding: 20px;
+        padding-top: 10px;
+        background: rgba(28, 31, 46, 0.5);
+        border-radius: 12px;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    }
+
+    .skills-section h3 {
+        margin-top: 10px;
+        font-size: 26px;
+        color: #ffffff;
+        text-align: center;
+        margin-bottom: 0px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+    .skills-slider {
+        display: flex;
+        padding: 5px;
+        flex-wrap: nowrap;
+        overflow: hidden;
+        position: relative;
+        height: 120px;
+    }
+
+    .slide {
+        display: flex;
+        width: max-content;
+    }
+
+    .skill {
+        flex: 0 0 25%;
+        box-sizing: border-box;
+        padding: 15px 10px;
+        background: rgba(163, 177, 198, 0.2);
+        border-radius: 10px;
+        margin-right: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        transform: scale(1);
+        animation: slide 10s linear infinite;
+    }
+
+    .skill:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 12px rgba(0, 0, 0, 0.6);
+    }
+
+    .skill-name {
+        font-size: 20px;
+        color: #ffffff;
+        margin-bottom: 10px;
+        font-weight: bold;
+    }
+
+    .skill-bar {
+        width: 100%;
+        background: #333;
+        border-radius: 10px;
+        overflow: hidden;
+        position: relative;
+        height: 22px;
+        box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5);
+
+    }
+
+    .skill-progress {
+        height: 100%;
+        background: linear-gradient(135deg, #4caf50, #81c784);
+        border-radius: 10px;
+        position: relative;
+    }
+
+    .skill-percentage {
+        margin-top: 10px;
+        font-size: 18px;
+        color: #ffffff;
+    }
+
+    @keyframes slide {
+        0% {
+            transform: translateX(0);
+        }
+
+        100% {
+            transform: translateX(-100%);
+        }
+    }
+
+</style>
 <div class="main-content">
     <div class="prof-image">
         <img src="{% static 'resume/images/photo.jpg' %}" alt="Your Photo" class="profile-photo">
     </div>
     <div class="right-section">
-        <div class="social-icons">
-            <a href="https://www.linkedin.com/in/your-linkedin-profile" target="_blank"><i
-                    class="fab fa-linkedin"></i></a>
-            <a href="https://www.instagram.com/your-instagram-profile" target="_blank"><i
-                    class="fab fa-instagram"></i></a>
-            <a href="https://www.github.com/your-github-profile" target="_blank"><i class="fab fa-github"></i></a>
-        </div>
         <h1>Hello, Welcome</h1>
         <h2 class="animated-text">I am Vivek</h2>
         <p class="desc">
@@ -21,8 +113,81 @@
             a variety of programming languages and frameworks, and committed to continuous learning and professional
             development.
         </p>
-        <a href="{% url 'projects' %}" class="btn">See my work</a>
-        <a href="{% static 'resume/files/my_cv.pdf' %}" class="download-btn" download>Download CV</a>
+
+        <!-- Skills Section -->
+        <div class="skills-section">
+            <h3>My Skills</h3>
+            <div class="skills-slider">
+                <div class="skill">
+                    <div class="skill-name">Python</div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 80%;"></div>
+                    </div>
+                    <div class="skill-percentage">80%</div>
+                </div>
+                <div class="skill">
+                    <div class="skill-name">SQL</div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 60%;"></div>
+                    </div>
+                    <div class="skill-percentage">70%</div>
+                </div>
+                <div class="skill">
+                    <div class="skill-name">Java</div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 60%;"></div>
+                    </div>
+                    <div class="skill-percentage">70%</div>
+                </div>
+                <div class="skill">
+                    <div class="skill-name">Communication</div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 70%;"></div>
+                    </div>
+                    <div class="skill-percentage">70%</div>
+                </div>
+                <div class="skill">
+                    <div class="skill-name">Teamwork</div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 70%;"></div>
+                    </div>
+                    <div class="skill-percentage">70%</div>
+                </div>
+                <div class="skill">
+                    <div class="skill-name">ML&AI</div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 50%;"></div>
+                    </div>
+                    <div class="skill-percentage">50%</div>
+                </div>
+            </div>
+        </div>
+
+
     </div>
 </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+
+        const slider = document.querySelector('.skills-slider');
+        const slide = document.querySelector('.slide');
+        let offset = 0;
+        let slideWidth = slide.scrollWidth;
+
+        function startSlide() {
+            setInterval(() => {
+                offset -= slideWidth / 10; // Adjust scrolling speed
+                if (Math.abs(offset) >= slideWidth) {
+                    offset = 0; // Reset to start
+                }
+                slider.style.transform = `translateX(${offset}px)`;
+            }, 3000); // Adjust transition speed
+        }
+
+        startSlide();
+    });
+
+</script>
+
 {% endblock %}

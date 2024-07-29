@@ -274,16 +274,17 @@
                 max-width: 400px;
             }
 
-            .left-sec{
+            .left-sec {
                 left: 40px;
             }
+
             .contact-info {
                 margin-top: 80px;
                 right: -100px;
-                font-size:large;
+                font-size: large;
             }
 
-            .typing-text{
+            .typing-text {
                 font-size: 19px;
             }
         }
@@ -356,27 +357,27 @@
                 border-radius: 10px;
             }
 
-            .left-sec{
+            .left-sec {
                 left: 210px;
                 top: 260px;
                 max-width: 400px;
                 max-height: 200px;
             }
 
-            .social-icons{
+            .social-icons {
                 margin-right: -55px;
                 margin-bottom: 0px;
             }
-            
+
             .contact-info {
                 margin-top: 30px;
                 right: -80px;
-                font-size:medium;
+                font-size: medium;
             }
 
-            .typing-text{
+            .typing-text {
                 font-size: 20px;
-            }   
+            }
 
             .contact-form h1 {
                 font-size: 18px;
@@ -402,7 +403,36 @@
 
         @media (max-width: 576px) {
             .contact-form {
-                padding: 15px;
+                margin: 20px 50px;
+                padding-top: 0px;
+                padding-bottom: 10px;
+                margin-top: 330px;
+                margin-right: -80px;
+                max-width: 550px;
+                max-height: 380px;
+                border-radius: 10px;
+            }
+
+            .left-sec {
+                left: 30px;
+                top: 260px;
+                max-width: 400px;
+                max-height: 200px;
+            }
+
+            .social-icons {
+                margin-right: -55px;
+                margin-bottom: 0px;
+            }
+
+            .contact-info {
+                margin-top: 30px;
+                right: -80px;
+                font-size: medium;
+            }
+
+            .typing-text {
+                font-size: 20px;
             }
 
             .contact-form h1 {
@@ -426,10 +456,41 @@
             }
         }
 
-        @media (max-width: 480px) {
+        @media (max-width: 400px) {
             .contact-form {
-                padding: 10px;
-                width: 90%;
+                margin: 10px 10px;
+                padding-top: 0px;
+                padding-bottom: 10px;
+                margin-top: 330px;
+                margin-right: -88px;
+                max-width: 350px;
+                max-height: 350px;
+                border-radius: 10px;
+            }
+
+            .left-sec {
+                left: 10px;
+                top: 260px;
+                max-width: 400px;
+                max-height: 200px;
+            }
+
+            .social-icons {
+                margin-right: -55px;
+                margin-bottom: -10px;
+            }
+
+            .contact-info {
+                padding: 8pxpx 5px;
+                margin-top: 30px;
+                right: -100px;
+                max-width: 350px;
+                max-height: 200px;
+                font-size: medium;
+            }
+
+            .typing-text {
+                font-size: 18px;
             }
 
             .contact-form h1 {
@@ -451,20 +512,54 @@
 
             .create-yours-link {
                 font-size: 11px;
+                margin-left: 150px;
             }
         }
 
         @media (max-width: 360px) {
             .contact-form {
-                padding: 5px;
-                width: 85%;
-                margin-top: -40px;
+                margin-left: 20px;
+                margin-right: 20px;
+                padding: 30px 10px;
+                padding-right: -10px;
+                margin: 5px 10px;
+                padding-top: 0px;
+                padding-bottom: 10px;
+                margin-top: 330px;
+                margin-right: -90px;
+                max-width: 300px;
+                max-height: 450px;
+                border-radius: 10px;
+            }
+
+            .left-sec {
+                /* padding-left: 15px;
+                padding-right: 15px; */
+                left: 10px;
+                top: 260px;
+                max-width: 300px;
+                max-height: 180px;
+            }
+
+            .social-icons {
+                margin-right: -83px;
+                margin-bottom: -22px;
+                font-size: small;
+
             }
 
             .contact-info {
-                padding: 5px;
-                width: 65%;
-                margin-top: 0px;
+                margin-left: 20px;
+                margin-right: 20px;
+                margin-top: 30px;
+                right: -100px;
+                max-width: 350px;
+                max-height: 200px;
+                font-size: small;
+            }
+
+            .typing-text {
+                font-size: 18px;
             }
 
             .contact-form h1 {
@@ -475,7 +570,7 @@
             .contact-form textarea {
                 font-size: 10px;
                 padding: 6px;
-                width: 95%;
+                width: 85%;
             }
 
             .contact-form button {
@@ -485,6 +580,8 @@
 
             .create-yours-link {
                 font-size: 10px;
+                margin-left: 120px;
+
             }
         }
     </style>
@@ -504,12 +601,12 @@
             <p><i class="fas fa-phone"></i> +123 456 7890</p>
         </div>
         <div class="social-icons">
-            <a href="https://www.linkedin.com/in/your-linkedin-profile" target="_blank"><i
-                    class="fab fa-linkedin"></i></a>
-            <a href="https://www.instagram.com/your-instagram-profile" target="_blank"><i
-                    class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/vivek-kantariya/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.instagram.com/__.vivekk" target="_blank"><i class="fab fa-instagram"></i></a>
             <a href="https://www.github.com/vivekkantariya" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="path/to/your/CV.pdf" target="_blank" download><i class="fas fa-file-download"></i></a>
+            <a href="{% static 'files/CV.pdf' %}" download>
+                <i class="fas fa-file-download"></i>
+            </a>
         </div>
     </div>
     <div class="container">
