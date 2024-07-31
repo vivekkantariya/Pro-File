@@ -440,10 +440,10 @@ body {
     }
 
     .profile-photo {
-        width: 130px;
-        height: 140px;
+        width: 145px;
+        height: 160px;
         margin-left: 280px;
-        margin-top: 20px;
+        margin-top: -45px;
     }
 
 
@@ -487,7 +487,7 @@ body {
         width: 120px;
         height: 135px;
         left: -180px;
-        top: -70px;
+        top: -50px;
     }
 
     .right-section {
@@ -529,7 +529,7 @@ body {
         width: 120px;
         height: 135px;
         left: -200px;
-        top: -70px;
+        top: -60px;
     }
 
     .right-section {
@@ -577,7 +577,7 @@ body {
         width: 110px;
         height: 125px;
         left: -210px;
-        top: -50px;
+        top: -40px;
     }
 
     .right-section {
@@ -612,4 +612,5 @@ body {
         padding: 5px 10px;
         margin-bottom: 0px;
     }
+
 }
