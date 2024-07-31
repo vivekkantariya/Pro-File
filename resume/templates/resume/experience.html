@@ -10,24 +10,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Experience</title>
     <style>
-        html{
-            overflow-x: hidden; 
+        html {
+            overflow-x: hidden;
         }
+
         body {
             margin: 0;
             padding: 0;
             font-family: 'Roboto', sans-serif;
             background: #0e0b16;
             color: #ffffff;
-            overflow-x: hidden; 
+            overflow-x: hidden;
             box-sizing: border-box;
         }
 
         .container {
             width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
+            max-width: 1500px;
+            padding: 20px 20px 20px 20px;
             position: relative;
             z-index: 1;
         }
@@ -44,7 +44,7 @@
             position: relative;
             padding: 20px 0;
             list-style: none;
-            overflow: hidden; /* Prevent timeline overflow */
+            overflow: hidden;
         }
 
         .timeline::before {
@@ -61,7 +61,7 @@
         .timeline-item {
             position: relative;
             width: 50%;
-            padding: 20px 40px;
+            padding: 20px 0px;
             box-sizing: border-box;
         }
 
@@ -86,6 +86,11 @@
             border-radius: 6px;
             box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s;
+            margin-left: 30px;
+            margin-right: 30px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 1);
+
         }
 
         .timeline-item-content:hover {
@@ -308,23 +313,36 @@
         <ul class="timeline">
             <li class="timeline-item">
                 <div class="timeline-item-content">
-                    <span class="date">Jan 2020 - Present</span>
-                    <h2 class="title">Senior Developer</h2>
-                    <p class="desc">Working on advanced web applications and leading a team of developers.</p>
+                    <span class="date">Dec 2023 - Dec 2023</span>
+                    <h2 class="title">SSIP Hackathon 2023</h2>
+                    <p class="desc">During the 2023 Hackathon Grand Finale,I actively participated as a Python Django
+                        Developer, where I contributed significantly to the development of commercial and portal
+                        projects. My primary role involved leveraging Django to build robust and scalable web
+                        applications, ensuring seamless integration of various functionalities to meet project
+                        requirements.</p>
                 </div>
             </li>
             <li class="timeline-item">
                 <div class="timeline-item-content">
-                    <span class="date">Jun 2018 - Dec 2019</span>
-                    <h2 class="title">Full Stack Developer</h2>
-                    <p class="desc">Developed and maintained full-stack solutions for various clients.</p>
+                    <span class="date">Sep 2023 - Oct 2023</span>
+                    <h2 class="title">Java Developer</h2>
+                    <p class="desc">During my one-month internship focused on Advanced Java with Swing, I developed
+                        sophisticated desktop applications using Java Swing. I worked on creating intuitive and
+                        responsive user interfaces, implementing advanced features such as custom dialogs and dynamic
+                        data handling, and optimizing performance. This experience enhanced my skills in building
+                        scalable desktop applications and improved my proficiency in integrating data management
+                        techniques with a strong emphasis on user experience and design.</p>
                 </div>
             </li>
             <li class="timeline-item">
                 <div class="timeline-item-content">
-                    <span class="date">Jan 2016 - May 2018</span>
-                    <h2 class="title">Web Developer</h2>
-                    <p class="desc">Focused on front-end development, creating responsive and dynamic web pages.</p>
+                    <span class="date">July 2022 - Aug 2022</span>
+                    <h2 class="title">Django Developer</h2>
+                    <p class="desc">During my 1-month internship, I gained practical experience in Python and Django,
+                        focusing on web development. I contributed to the development of web applications by
+                        implementing features, managing databases using Django’s ORM, and participating in code reviews
+                        and debugging. This role allowed me to collaborate with a team to enhance project functionality
+                        and performance, providing a solid foundation in building scalable web applications.</p>
                 </div>
             </li>
         </ul>

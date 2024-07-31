@@ -1,7 +1,0 @@
-Django>=3.2,<4.0
-django-crispy-forms>=1.11.2
-djangorestframework>=3.12.4
-pillow>=8.2.0
-psycopg2-binary>=2.9.1  # if using PostgreSQL
-mysqlclient>=2.0.3  # if using MySQL
-django-widget-tweaks>=1.4.8
