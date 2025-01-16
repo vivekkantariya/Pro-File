@@ -2,6 +2,8 @@
 
 An interactive and visually appealing online resume website designed to showcase personal and professional achievements. This project is a live portfolio where users can explore skills, experience, and projects in an organized and engaging format.
 
+![image](https://github.com/user-attachments/assets/11436311-d05b-49f0-ab96-4bd1815ba49a)
+
 ## Features
 - **Personal Profile**: Includes a brief introduction and professional summary.  
 - **Projects Section**: Displays detailed descriptions of completed projects with features and live demos.  
