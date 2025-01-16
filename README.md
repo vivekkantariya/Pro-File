@@ -27,7 +27,7 @@ Visit the live site here: [https://pro-file.onrender.com](https://pro-file.onren
 3. Dynamic elements, such as animations and transitions, create an engaging user experience.  
 
 ## Future Enhancements
-- Include more project showcases and detailed descriptions.  
+- Include more project showcases and detailed descriptions..  
 
 ---
 
