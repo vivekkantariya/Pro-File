@@ -1,1 +1,282 @@
+{% extends 'resume/base.html' %}
+{% load static %}
 
+{% block content %}
+
+<style>
+    .skills-section {
+        margin-top: 10px;
+        margin-bottom: 5px;
+        padding: 20px;
+        padding-top: 10px;
+        background: rgba(28, 31, 46, 0.5);
+        border-radius: 12px;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    }
+
+    .skills-section h3 {
+        margin-top: 10px;
+        font-size: 26px;
+        color: #ffffff;
+        text-align: center;
+        margin-bottom: 0px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+    .skills-slider {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow: hidden;
+        position: relative;
+        height: 120px;
+    }
+
+    .slide {
+        display: flex;
+        width: max-content;
+        transition: transform 1s linear;
+    }
+
+    .skill {
+        flex: 0 0 25%;
+        box-sizing: border-box;
+        padding: 15px 10px;
+        background: rgba(163, 177, 198, 0.2);
+        border-radius: 10px;
+        margin-right: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        transform: scale(1);
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .skill:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 12px rgba(0, 0, 0, 0.6);
+    }
+
+    .skill-name {
+        font-size: 20px;
+        color: #ffffff;
+        margin-bottom: 10px;
+        font-weight: bold;
+    }
+
+    .skill-bar {
+        width: 100%;
+        background: #333;
+        border-radius: 10px;
+        overflow: hidden;
+        position: relative;
+        height: 22px;
+        box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .skill-progress {
+        height: 100%;
+        background: linear-gradient(135deg, #4caf50, #81c784);
+        border-radius: 10px;
+        position: relative;
+    }
+
+    .skill-percentage {
+        margin-top: 10px;
+        font-size: 18px;
+        color: #ffffff;
+    }
+
+    @media (max-width: 480px) {
+        .skill {
+            flex: 0 0 80%;
+            margin-right: 10px;
+        }
+
+        .skills-slider {
+            height: auto;
+            padding: 0;
+        }
+
+        .skill-name {
+            font-size: 18px;
+        }
+
+        .skill-bar {
+            height: 18px;
+        }
+
+        .skill-percentage {
+            font-size: 16px;
+        }
+    }
+
+    @media (max-width: 320px) {
+        .skill {
+            flex: 0 0 20%;
+            margin-right: 5px;
+        }
+
+        .skills-slider {
+            height: auto;
+            padding: 0;
+        }
+
+        .skill-name {
+            font-size: 16px;
+        }
+
+        .skill-bar {
+            height: 16px;
+        }
+
+        .skill-percentage {
+            font-size: 14px;
+        }
+    }
+    @media (max-width: 400px) {
+        .skill {
+            flex: 0 0 20%;
+            margin-right: 5px;
+        }
+
+        .skills-slider {
+            height: auto;
+            padding: 0;
+        }
+
+        .skill-name {
+            font-size: 16px;
+        }
+
+        .skill-bar {
+            height: 16px;
+        }
+
+        .skill-percentage {
+            font-size: 14px;
+        }
+    }
+    @media (max-width: 500px) {
+        .skill {
+            flex: 0 0 20%;
+            margin-right: 5px;
+        }
+
+        .skills-slider {
+            height: auto;
+            padding: 0;
+        }
+
+        .skill-name {
+            font-size: 16px;
+        }
+
+        .skill-bar {
+            height: 16px;
+        }
+
+        .skill-percentage {
+            font-size: 14px;
+        }
+    }
+</style>
+
+<div class="main-content">
+    <div class="prof-image">
+        <img src="{% static 'resume/images/photo.jpg' %}" alt="Your Photo" class="profile-photo">
+    </div>
+    <div class="right-section">
+        <h1>Hello, Welcome</h1>
+        <h2 class="animated-text">I am Vivek</h2>
+        <p class="desc">
+            I am a technology enthusiast with a strong foundation in Python, C, Java, and SQL, complemented by practical
+            experience from two internships. As a finalist in the 2023 Hackathon Grand Finale, I’ve demonstrated my
+            capability to excel in high-pressure environments. Currently pursuing a BE in Computer Engineering at GEC
+            Rajkot, I am exploring diverse fields such as software engineering, systems design, and data
+            structures, driven by a passion for innovation and a commitment to advancing technological frontiers.
+        </p>
+
+        <!-- Skills Section -->
+        <div class="skills-section">
+            <h3>My Skills</h3>
+            <div class="skills-slider">
+                <div class="slide">
+                    <div class="skill">
+                        <div class="skill-name">Python</div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 80%;"></div>
+                        </div>
+                        <div class="skill-percentage">80%</div>
+                    </div>
+                    <div class="skill">
+                        <div class="skill-name">SQL</div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 70%;"></div>
+                        </div>
+                        <div class="skill-percentage">70%</div>
+                    </div>
+                    <div class="skill">
+                        <div class="skill-name">Java</div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 70%;"></div>
+                        </div>
+                        <div class="skill-percentage">70%</div>
+                    </div>
+                    <div class="skill">
+                        <div class="skill-name">Communication</div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 70%;"></div>
+                        </div>
+                        <div class="skill-percentage">70%</div>
+                    </div>
+                    <div class="skill">
+                        <div class="skill-name">Teamwork</div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 70%;"></div>
+                        </div>
+                        <div class="skill-percentage">70%</div>
+                    </div>
+                    <div class="skill">
+                        <div class="skill-name">ML&AI</div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 50%;"></div>
+                        </div>
+                        <div class="skill-percentage">50%</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const slider = document.querySelector('.skills-slider .slide');
+        let offset = 0;
+        const slideWidth = slider.scrollWidth;
+
+        function startSlide() {
+            setInterval(() => {
+                const viewportWidth = window.innerWidth;
+                let speedMultiplier = 1;
+
+                if (viewportWidth <= 480) {
+                    speedMultiplier = 1; // Slower speed for smaller screens
+                }
+
+                offset -= (slideWidth / 20) * speedMultiplier; // Adjust scrolling speed
+                if (Math.abs(offset) >= slideWidth) {
+                    offset = 0; // Reset to start
+                }
+                slider.style.transform = `translateX(${offset}px)`;
+            }, 1000); // Adjust transition speed
+        }
+
+        startSlide();
+    });
+</script>
+
+{% endblock %}
